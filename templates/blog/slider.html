@@ -1,0 +1,46 @@
+
+        <!-- slider-->
+        
+        <div class="top-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 tn-left">
+                        <div class="row tn-slider">
+                        {%  for article in articles %}
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="{{article.thumbnail.url}}" />
+                                    
+                                    <div class="tn-title">
+                                        <a href="{% url 'blog:detail' article.slug %}">{{article.title}}</a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        {%  endfor %}
+                          
+                        </div>
+                    </div>
+                    <div class="col-md-6 tn-right">
+                       
+                        <div class="row">
+                        {%  for cat in article %}
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="{{cat.thumbnail.url}}" />
+                                    <div class="tn-title">
+                                        <a href="">{{cat.title}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {%  endfor %}  
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- slider-->

@@ -1,0 +1,10 @@
+<div class="navbar-nav mr-auto">
+                        
+                            <a href="{% url 'blog:blog' %}" class="nav-item nav-link active">Home</a>
+
+                            <!--############# اضاقه کردن کتگوری -->
+                            
+                            {% for cat in category  %}
+                            <a href="{% url 'blog:category'  cat.slug %}" class="nav-item nav-link ">{{cat.title}}</a>
+                            {%  endfor %}
+</div>

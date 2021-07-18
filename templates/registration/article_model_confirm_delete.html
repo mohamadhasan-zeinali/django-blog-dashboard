@@ -1,0 +1,22 @@
+
+{% extends 'registration/base.html' %}
+
+{% block main %}
+
+
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %} 
+        <div class="form-row">
+            <div class="form-group col-md-12  text-center mb-0 card  mt-5 card-danger">
+                <div class="card-header">
+                    <p>Are you sure you want to delete "{{ object }}"?</p>
+                     <input type="submit" value="yes, delete">
+                </div>
+            </div>
+             
+        </div>
+    
+        
+       
+    </form>
+
+{% endblock %}
