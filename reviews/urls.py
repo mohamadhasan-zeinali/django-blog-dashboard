@@ -6,12 +6,12 @@ urlpatterns = [
     
     path('', Article, name="blog"),
     path('blog/<slug:slug>',Detail, name="detail"),
-    path('preview/<slug:slug>',ArticlePreview,name="preview"),#برای صفحه پیش نمایش
+    #demo page
+    path('preview/<slug:slug>',ArticlePreview,name="preview"),
     path('category/<slug:slug>',category, name="category"),
     path('category/<slug:slug>/page/<int:page>',category, name="category"),
 
-    #### url persian
-    #re_path(r'(?v<slug>[-\w]+)')
+  
 
    
 ]

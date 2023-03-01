@@ -9,18 +9,13 @@ from django.views.generic import ListView , DetailView
 from django.core.paginator import Paginator
 
 
-
-
-# Create your views here.
-
 def Article(request):
     #paginator mnadare badan narashh bezar 
     context={
-        #اسلایدر که شامل همه بلاگ ها است 
+        #slider for all blog 
         "articles": Article_model.objects.all(),
-        #بلاگ ها به غیر از اونایی که تو اسلاید هستند
+        # just slider
         "article" : Article_model.objects.filter(status = 'x'),
-        #دسته بندی ها 
 
     }
     return render(request , 'blog/index.html',context)
@@ -36,8 +31,7 @@ def Detail(request , slug):
 
 
  
-    #######  ویو برای دسته بندی ها 
-
+# category view
 def category(request , slug , page=1):
     category= get_object_or_404(Category,  slug=slug,  status=True)
     article_list= category.articles.all()
@@ -52,11 +46,7 @@ def category(request , slug , page=1):
     }
     return render(request, 'blog/category.html',context)
 
-# برای پیش نمایش مقالات در داشبورد
-#class ArticlePreview(DetailView):
-#    def get_object(self):
-#        pk = self.kwargs.get('pk')
-#        return get_object_or_404(Article_model, pk=pk)
+
 
 def ArticlePreview(request , slug):
     

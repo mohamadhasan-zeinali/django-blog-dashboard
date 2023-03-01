@@ -1,20 +1,16 @@
 from django.db import models
 from django.utils import timezone
-#اضافه کردن  ادیتور سی کی به پروژه 
+
 from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.fields  import RichTextField
 
-#برای مشخص کردن برگرداندن یک رشته به عنوان url
 from django.urls import reverse
-# model  user
+
 from django.contrib.auth.models import User
-#برای نمایش تصویر در پنل جنگو 
+
 from django.utils.html import format_html
 
-  #  from django.contrib.contenttypes.fields import GenericRelation
-  #  from comment.models import Comment
-## end comments
-# Create your models here.
+
 class Category(models.Model):
     title=models.CharField(max_length=100, verbose_name="title")
     slug=models.CharField(max_length=50,verbose_name="url")
@@ -31,7 +27,7 @@ class Article_model(models.Model):
     STATUS_CHOICES=(
         (   ' P ' , 'PUBLISH'),
         (    ' d ' , 'DRAFT'),
-        #فقط بلاگ های سمت راست هستند
+        
         ('x' , 'blog')
     )
     auther=models.ForeignKey(User, null=True, on_delete=models.SET_NULL,verbose_name="auther",related_name='articles')
@@ -50,7 +46,7 @@ class Article_model(models.Model):
             verbose_name="Article "
             verbose_name_plural="Articles"
 
-    #برای نمایش عکس ها در پنل جنگو
+
     def  thumbnail_tag(self) :
         return format_html("<img src='{}' width=200>".format(self.thumbnail.url) )
     thumbnail_tag.short_description="picture"
@@ -63,6 +59,5 @@ class Article_model(models.Model):
     def __str__(self):
         return self.title 
 
-        #######  برای ریدایرکت کردن اطلاعات وئ ریختن در در سایت
     def get_absolute_url(self):
         return reverse("account:home")
