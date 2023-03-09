@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'widget_tweaks',
     'crispy_forms',
-    'ckeditor'
+    'ckeditor', 
+    'rest_framework',
+    'api',
     
     
 
