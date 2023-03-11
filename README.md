@@ -11,10 +11,10 @@ Download and install django + blog + dashboard:
  
 
  ## STACK 
- % Backend 
+
  * python
  * django
- % Front
+ * django-rest-framework
  * html
  * css
  * javascripts 
