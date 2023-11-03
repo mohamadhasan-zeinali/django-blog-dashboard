@@ -3,6 +3,7 @@ api/
 venv/
 media/
 templates/
-
+static_root/
+static/
 #files
 db.sqlite3
