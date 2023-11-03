@@ -10,7 +10,6 @@ from django.contrib.auth.models import User
 
 from django.utils.html import format_html
 
-
 class Category(models.Model):
     title=models.CharField(max_length=100, verbose_name="title")
     slug=models.CharField(max_length=50,verbose_name="url")
@@ -38,7 +37,7 @@ class Article_model(models.Model):
     description =RichTextField(blank="True", null="True")
     description =RichTextUploadingField(blank="True", null="True")
     thumbnail=models.ImageField(upload_to="images",verbose_name="picture-url")
-    date=models.DateTimeField(default=timezone.now)
+    date=models.DateTimeField(auto_now_add=timezone.now)
     status=models.CharField(max_length=3,choices=STATUS_CHOICES , verbose_name="status")
     
 

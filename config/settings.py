@@ -36,9 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reviews.apps.ReviewsConfig',
     'account.apps.AccountConfig',
-    'widget_tweaks',
-    'crispy_forms',
-    'ckeditor', 
+    # 'widget_tweaks',
+    # 'crispy_forms',
+    'ckeditor',
     'rest_framework',
     'api',
     

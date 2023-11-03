@@ -13,6 +13,8 @@ urlpatterns = [
 ]
 router = DefaultRouter()
 router.register('category', CategoryViewset, basename='category')
+router.register('blog', BlogViewset, basename='blog')
+# router.register('blog/<slug:slug>/', BlogViewset, basename='blog-detail')
 
 urlpatterns +=[
     path('api/', include(router.urls))
