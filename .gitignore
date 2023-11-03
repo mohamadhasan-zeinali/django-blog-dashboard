@@ -1,6 +1,7 @@
 #directories
 api/
 venv/
-
+media/
+templates/
 #files
 db.sqlite3
