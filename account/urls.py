@@ -1,16 +1,16 @@
 
-
 from django.contrib.auth import views
-from django.urls import path
-from .views import (
-    ArticleList ,
-    ArticleCreate,
-    ArticleUpdate,
-    ArticleDelete
-    )
+from django.urls import path, include
+from .views import *
+from .rest_view import *
+from rest_framework.routers import  DefaultRouter
+router = DefaultRouter()
+
+router.register('articles', ArticleViewSet, basename='article')
 
 app_name="account"
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
 
