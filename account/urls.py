@@ -7,6 +7,7 @@ from rest_framework.routers import  DefaultRouter
 router = DefaultRouter()
 
 router.register('articles', ArticleViewSet, basename='article')
+router.register('category', CategoryViewSet, basename='category')
 
 app_name="account"
 urlpatterns = [
