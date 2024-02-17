@@ -8,6 +8,7 @@ router = DefaultRouter()
 
 router.register('articles', ArticleViewSet, basename='article')
 router.register('category', CategoryViewSet, basename='category')
+router.register('forget-password', ForgetPasswordEmail, basename='forget-password')
 
 app_name="account"
 urlpatterns = [

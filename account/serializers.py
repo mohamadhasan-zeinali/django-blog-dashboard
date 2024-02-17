@@ -1,6 +1,7 @@
 from rest_framework import  serializers
 from reviews.models import *
 
+
 class ArticleSerializer(serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='account:article-detail')
     class Meta:
@@ -13,3 +14,7 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['url', 'id', 'title', 'description', 'slug', 'status']
+
+
+class ForgetPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField(max_length=100)
